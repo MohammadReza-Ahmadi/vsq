@@ -1,0 +1,57 @@
+eureka:
+    client:
+        serviceUrl:
+            defaultZone: http://localhost:8000/registry/eureka
+    instance:
+        prefer-ip-address: false
+file:
+    upload-dir: ./uploads
+logging:
+    level:
+        com:
+            vosouq: info
+        org: error
+        root: warn
+server:
+    port: 8010
+service:
+    message:
+        code: 3
+spring:
+    application:
+        name: contract
+    jpa:
+        properties:
+            hibernate:
+                connection:
+                    CharSet: UTF-8
+                    characterEncoding: UTF-8
+                    useUnicode: UTF-8
+        show-sql: false
+    servlet:
+        multipart:
+            enabled: true
+            file-size-threshold: 2KB
+            max-file-size: 30MB
+            max-request-size: 35MB
+    kafka:
+        consumer:
+            properties:
+                spring:
+                    json:
+                        trusted:
+                            packages: '*'
+kafka:
+  bootstrapAddress: 192.168.12.3:9092
+  groups:
+      contracts:
+          id: contractsGroupId
+  topics:
+      contracts:
+          name: contractsTopic
+          numPartitions: 1
+          replicationFactor: 1
+  contractsTopic:
+    enabled: true
+  contractPaymentsTopic:
+    enabled: true

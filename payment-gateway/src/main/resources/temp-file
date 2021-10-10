@@ -1,0 +1,31 @@
+
+
+--- all vosouq git projects url -------
+
+
+git clone git@gitlab.com:mohammadreza-ahmadi/fastapi-test-sample.git &&
+git clone git@gitlab.com:vsq1/backend/benchmark/sleuth-zipkin-prometheus.git  &&
+git clone git@gitlab.com:vsq1/backend/vsq/registry.git  &&
+git clone git@gitlab.com:vsq1/backend/vsq/payment-gateway.git  &&
+git clone git@gitlab.com:vsq1/backend/vsq/scoring-collector.git  &&
+
+git clone git@gitlab.com:vsq1/backend/vsq/profile.git  &&
+git clone git@gitlab.com:vsq1/backend/vsq/messaging.git  &&
+git clone git@gitlab.com:vsq1/backend/vsq/kyc.git  &&
+git clone git@gitlab.com:vsq1/backend/vsq/bookkeeping.git  &&
+git clone git@gitlab.com:vsq1/backend/vsq/contract.git  &&
+git clone git@gitlab.com:vsq1/backend/vsq/prototype.git  &&
+git clone git@gitlab.com:vsq1/backend/vsq/commons.git  &&
+git clone git@gitlab.com:vsq1/backend/vsq/immudb-client.git  &&
+git clone git@gitlab.com:vsq1/backend/vsq/gateway.git  &&
+git clone git@gitlab.com:vsq1/backend/vsq/e-signature.git  &&
+git clone git@gitlab.com:vsq1/backend/benchmark/spring-data-mongo.git  &&
+git clone git@gitlab.com:vsq1/backend/benchmark/microservices-observability.git  &&
+git clone git@gitlab.com:vsq1/backend/benchmark/jwt-token-sample.git  &&
+git clone git@gitlab.com:vsq1/backend/benchmark/grpc-vs-rest.git  &&
+git clone git@gitlab.com:vsq1/backend/benchmark/graphql-service.git  &&
+git clone git@gitlab.com:vsq1/backend/benchmark/graphical-dashboard.git  &&
+git clone git@gitlab.com:vsq1/backend/benchmark/chunk-file-upload.git  &&
+git clone git@gitlab.com:vsq1/backend/benchmark/caching.git  &&
+git clone git@gitlab.com:vsq1/backend/benchmark/ann-sample.git  &&
+git clone git@gitlab.com:mohammadreza-ahmadi/credit-scoring.git

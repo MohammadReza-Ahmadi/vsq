@@ -1,0 +1,168 @@
+--
+--
+-- --+++++++++++++++++ GENERAL LEDGER CREATION +++++++++++++++++++++++
+-- insert into general_ledger(type, code, debit ,credit,  description, normal_balance, date_time, balance) values
+-- ('ASSETS','1',0,0,'سرفصل کل: دارایی','DEBIT',now(),0);
+--
+-- insert into general_ledger(type, code,debit, credit,  description, normal_balance, date_time, balance) values
+-- ('LIABILIIES','2',0,0,'سرفصل کل: بدهی','CREDIT',now(),0);
+--
+-- insert into general_ledger(type, code,debit, credit,  description, normal_balance, date_time, balance) values
+-- ('EQUITIES','3',0,0,'سرفصل کل: سرمایه','CREDIT',now(),0);
+--
+-- insert into general_ledger(type, code,debit, credit,  description, normal_balance, date_time, balance) values
+-- ('REVENUE','4',0,0,'سرفصل کل: درآمد','CREDIT',now(),0);
+--
+-- insert into general_ledger(type, code,debit, credit,  description, normal_balance, date_time, balance) values
+-- ('GAINS','5',0,0,'سرفصل کل: سود','CREDIT',now(),0);
+--
+-- insert into general_ledger(type, code,debit, credit,  description, normal_balance, date_time, balance) values
+-- ('EXPENSES','6',0,0,'سرفصل کل: هزینه','DEBIT',now(),0);
+--
+-- insert into general_ledger(type, code,debit, credit,  description, normal_balance, date_time, balance) values
+-- ('LOSSES','7',0,0,'سرفصل کل: زیان','DEBIT',now(),0);
+--
+-- insert into general_ledger(type, code,debit, credit,  description, normal_balance, date_time, balance) values
+-- ('CONTROL ACCOUNTS','8',0,0,'سرفصل کل: حسابهای انتظامی','',now(),0);
+--
+-- insert into general_ledger(type, code,debit, credit,  description, normal_balance, date_time, balance) values
+-- ('CONTRA MEMORANDUM ACCOUNTS','9',0,0,'سرفصل کل: طرف حسابهای انتظامی','',now(),0);
+--
+--
+--
+--
+-- --+++++++++++++++++ SUBSIDIARY LEDGER CREATION +++++++++++++++++++++++
+--
+-- insert into subsidiary_ledger(code,debit, credit,  description, journalizing_page_number, normal_balance, title, date_time, balance, general_ledger_code) values
+-- (1,0,0,'سرفصل معین: موجودی نقد و بانک',0,'DEBIT','SUB-LEDGER: BANK',now(),0,'1');
+--
+-- insert into subsidiary_ledger(code,debit, credit,  description, journalizing_page_number, normal_balance, title, date_time, balance, general_ledger_code) values
+-- (2,0,0,'سرفصل معین: موجودی قابل معامله مشتریان',0,'CREDIT','SUB-LEDGER: Exchange Tradable Account Balance of Customers',now(),0,'2');
+--
+-- insert into subsidiary_ledger(code,debit, credit,  description, journalizing_page_number, normal_balance, title, date_time, balance, general_ledger_code) values
+-- (3,0,0,'سرفصل معین: موجودی مسدود شده مشتریان',0,'CREDIT','SUB-LEDGER: Blocked Account Balance of Customers',now(),0,'2');
+--
+-- insert into subsidiary_ledger(code,debit, credit,  description, journalizing_page_number, normal_balance, title, date_time, balance, general_ledger_code) values
+-- (4,0,0,'سرفصل معین: مالیات بر ارزش افزوده',0,'CREDIT','SUB-LEDGER: VAT (Value-added tax)',now(),0,'2');
+--
+-- insert into subsidiary_ledger(code,debit, credit,  description, journalizing_page_number, normal_balance, title, date_time, balance, general_ledger_code) values
+-- (5,0,0,'سرفصل معین: کارمزد معامله امن خرید',0,'CREDIT','SUB-LEDGER: Secure Purchase VAT (Value-added tax)',now(),0,'2');
+--
+-- insert into subsidiary_ledger(code,debit, credit,  description, journalizing_page_number, normal_balance, title, date_time, balance, general_ledger_code) values
+-- (6,0,0,'سرفصل معین: کارمزد معامله امن فروش',0,'CREDIT','SUB-LEDGER: Secure Sale VAT (Value-added tax)',now(),0,'2');
+--
+-- insert into subsidiary_ledger(code,debit, credit,  description, journalizing_page_number, normal_balance, title, date_time, balance, general_ledger_code) values
+-- (7,0,0,'سرفصل معین: خریداران کالا و خدمات',0,'','SUB-LEDGER: Buyers of goods and services',now(),0,'8');
+--
+-- insert into subsidiary_ledger(code,debit, credit,  description, journalizing_page_number, normal_balance, title, date_time, balance, general_ledger_code) values
+-- (8,0,0,'سرفصل معین: فروشندگان کالا و خدمات',0,'','SUB-LEDGER: Sellers of goods and services',now(),0,'9');
+--
+--
+--
+--
+-- --+++++++++++++++++ ACCOUNT CREATION +++++++++++++++++++++++
+-- insert into account(id,type,currency_code,subsidiary_ledger_code,user_id,status,balance,create_date_time,update_date_time,title,description) values
+-- (1,'VOSOUQ','IRR',1,1,'ACTIVE',0,now(),now(),'حساب اعتباری وثوق','حساب اعتباری وثوق زیر سرفصل معین:موجودی نقد و بانک');
+--
+-- insert into account(id,type,currency_code,subsidiary_ledger_code,user_id,status,balance,create_date_time,update_date_time,title,description) values
+-- (2,'USER','IRR',2,2,'ACTIVE',0,now(),now(),'حساب اعتباری کاربر با شناسه ۱','حساب اعتباری کاربر با شناسه ۱ زیر سرفصل معین:موجودی قابل معامله مشتریان');
+--
+--
+-- --+++++++++++++++++ JOURNALIZING_PAGE CREATION +++++++++++++++++++++++
+-- insert into journalizing_page(date_time, number) values (now(),1);
+--
+--
+-- --+++++++++++++++++ POSTING MODEL CREATION +++++++++++++++++++++++
+-- insert into posting_model(code,title,description) values (1,'ACCOUNT-CHARGE','شارژ حساب کاربری وثوق');
+--
+-- insert into posting_model(code,title,description) values (2,'CONTRACT-REGISTRATION','ثبت قرارداد');
+--
+-- insert into posting_model(code,title,description) values (3,'CONTRACT-PAYMENT','پرداخت مبلغ قرارداد');
+--
+-- insert into posting_model(code,title,description) values (4,'GOODS-DELIVERY','تحویل مورد کالا');
+--
+-- insert into posting_model(code,title,description) values (5,'CONTRACT-SETTLEMENT','تسویه قرارداد');
+--
+-- insert into posting_model(code,title,description) values (6,'CONTRACT-FUNDS-RECEIVE','دریافت مبلغ قرارداد');
+--
+--
+-- --+++++++++++++++++ VOUCHER MODEL CREATION +++++++++++++++++++++++
+-- insert into voucher_model(code, posting_model_code) values (1,1);
+--
+-- insert into voucher_model(code, posting_model_code) values (2,2);
+--
+-- insert into voucher_model(code, posting_model_code) values (3,3);
+--
+-- insert into voucher_model(code, posting_model_code) values (4,4);
+--
+-- insert into voucher_model(code, posting_model_code) values (5,5);
+--
+-- insert into voucher_model(code, posting_model_code) values (6,6);
+--
+--
+--
+-- --+++++++++++++++++ VOUCHER ROW MODEL CREATION +++++++++++++++++++++++
+--
+-- ---------------- define row models of posting-model: 1: CHARGE-ACCOUNT
+-- insert into voucher_row_model(code, normal_balance, voucher_model_code,subsidiary_ledger_code, identifier, amount_formula, narrative1, narrative2, narrative3) values
+-- (1,'DEBIT',1,1,'b','a','مشتری خریدار', null, 'کل مبلغ');
+--
+-- insert into voucher_row_model(code, normal_balance, voucher_model_code,subsidiary_ledger_code, identifier, amount_formula, narrative1, narrative2, narrative3) values
+-- (2,'CREDIT',1,2,'a','a','مشتری خریدار', null, 'کل مبلغ');
+--
+--
+--
+-- ---------------- define row models of posting-model: 2: CONTRACT-REGISTRATION
+-- insert into voucher_row_model(code, normal_balance, voucher_model_code,subsidiary_ledger_code, identifier, amount_formula, narrative1, narrative2, narrative3) values
+-- (3,'DEBIT',2,7,'a','a','مشتری خریدار', 'قرارداد', 'حساب انتظامی یک ریالی');
+--
+-- insert into voucher_row_model(code, normal_balance, voucher_model_code,subsidiary_ledger_code, identifier, amount_formula, narrative1, narrative2, narrative3) values
+-- (4,'CREDIT',2,8,'b','a','مشتری فروشنده', 'قرارداد', 'طرف حساب انتظامی یک ریالی');
+--
+--
+-- ---------------- define row models of posting-model: 3: CONTRACT-PAYMENT
+-- insert into voucher_row_model(code, normal_balance, voucher_model_code,subsidiary_ledger_code, identifier, amount_formula, narrative1, narrative2, narrative3) values
+-- (5,'DEBIT',3,2,'a','a','مشتری خریدار', 'قرارداد', 'کل مبلغ');
+--
+-- insert into voucher_row_model(code, normal_balance, voucher_model_code,subsidiary_ledger_code, identifier, amount_formula, narrative1, narrative2, narrative3) values
+-- (6,'CREDIT',3,5,'b','c','مشتری خریدار', 'قرارداد', 'مبلغ کارمزد');
+--
+-- insert into voucher_row_model(code, normal_balance, voucher_model_code,subsidiary_ledger_code, identifier, amount_formula, narrative1, narrative2, narrative3) values
+-- (7,'CREDIT',3,4,'c','v','اداره مالیات بر ارزش افزوده', 'قرارداد', 'مبلغ مالیات');
+--
+-- insert into voucher_row_model(code, normal_balance, voucher_model_code,subsidiary_ledger_code, identifier, amount_formula, narrative1, narrative2, narrative3) values
+-- (8,'CREDIT',3,3,'d','r','مشتری خریدار', 'قرارداد', 'کل مبلغ پس از کسر کارمزد و مالیات');
+--
+--
+--
+-- ---------------- define row models of posting-model: 4: GOODS-DELIVERY
+-- insert into voucher_row_model(code, normal_balance, voucher_model_code,subsidiary_ledger_code, identifier, amount_formula, narrative1, narrative2, narrative3) values
+-- (9,'DEBIT',4,8,'a','a','مشتری فروشنده', 'قرارداد', 'طرف حساب انتظامی یک ریالی');
+--
+-- insert into voucher_row_model(code, normal_balance, voucher_model_code,subsidiary_ledger_code, identifier, amount_formula, narrative1, narrative2, narrative3) values
+-- (10,'CREDIT',4,7,'b','a','مشتری خریدار', 'قرارداد', 'حساب انتظامی یک ریالی');
+--
+--
+--
+-- ---------------- define row models of posting-model: 5: CONTRACT-SETTLEMENT
+-- insert into voucher_row_model(code, normal_balance, voucher_model_code,subsidiary_ledger_code, identifier, amount_formula, narrative1, narrative2, narrative3) values
+-- (11,'DEBIT',5,3,'a','a','مشتری خریدار', 'قرارداد', 'کل مبلغ');
+--
+-- insert into voucher_row_model(code, normal_balance, voucher_model_code,subsidiary_ledger_code, identifier, amount_formula, narrative1, narrative2, narrative3) values
+-- (12,'CREDIT',5,6,'b','c','مشتری فروشنده', 'قرارداد', 'مبلغ کارمزد');
+--
+-- insert into voucher_row_model(code, normal_balance, voucher_model_code,subsidiary_ledger_code, identifier, amount_formula, narrative1, narrative2, narrative3) values
+-- (13,'CREDIT',5,4,'c','v','اداره مالیات بر ارزش افزوده', 'قرارداد', 'مبلغ مالیات');
+--
+-- insert into voucher_row_model(code, normal_balance, voucher_model_code,subsidiary_ledger_code, identifier, amount_formula, narrative1, narrative2, narrative3) values
+-- (14,'CREDIT',5,2,'d','r','اداره مالیات بر ارزش افزوده', 'قرارداد', 'کل مبلغ پس از کسر کارمزد و مالیات');
+--
+--
+--
+-- ---------------- define row models of posting-model: 6: CONTRACT-FUNDS-RECEIVE
+-- insert into voucher_row_model(code, normal_balance, voucher_model_code,subsidiary_ledger_code, identifier, amount_formula, narrative1, narrative2, narrative3) values
+-- (15,'DEBIT',6,1,'a','a','مشتری فروشنده', null, 'کل مبلغ');
+--
+-- insert into voucher_row_model(code, normal_balance, voucher_model_code,subsidiary_ledger_code, identifier, amount_formula, narrative1, narrative2, narrative3) values
+-- (16,'CREDIT',6,2,'b','a','مشتری فروشنده', null, 'کل مبلغ');
+--

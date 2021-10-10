@@ -1,0 +1,6 @@
+spring:
+  profiles:
+    include:
+      - local
+  zipkin:
+    baseUrl: https://zipkinserver/

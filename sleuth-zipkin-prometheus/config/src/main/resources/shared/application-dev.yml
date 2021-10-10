@@ -1,0 +1,8 @@
+spring:
+  zipkin:
+    baseUrl: https://zipkinserver/
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: https://registry/eureka/

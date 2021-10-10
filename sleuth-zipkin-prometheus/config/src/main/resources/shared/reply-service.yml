@@ -1,0 +1,4 @@
+server:
+#  servlet:
+#    context-path: /reply
+  port: 6003

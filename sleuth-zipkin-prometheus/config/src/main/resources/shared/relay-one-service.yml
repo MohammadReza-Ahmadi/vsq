@@ -1,0 +1,7 @@
+server:
+#  servlet:
+#    context-path: /relay-one
+  port: 6001
+sleuth:
+  sampler:
+    probability: 1.0

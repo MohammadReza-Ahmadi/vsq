@@ -1,0 +1,19 @@
+version: "3.9"
+services:
+  scoring-calculator:
+    build: ../scoring-calculator/
+    image: scoring-calculator-img
+    container_name: scoring-calculator
+    environment:
+      mongodb_host: "172.17.0.1"
+    ports:
+    - "8016:8016"
+
+  scoring-communicator:
+    build: .
+    image: scoring-communicator-img
+    container_name: scoring-communicator
+    environment:
+      JAVA_OPTS: "-Dmongodb.database.host=172.17.0.1 -Dscoring.calculator.server.address=172.17.0.1:8016"
+    ports:
+    - "8011:8011"

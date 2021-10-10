@@ -1,0 +1,4 @@
+server:
+#  servlet:
+#    context-path: /relay-two
+  port: 6002

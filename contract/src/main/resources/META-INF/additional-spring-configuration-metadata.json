@@ -1,0 +1,53 @@
+{
+  "properties": [
+    {
+      "name": "cleanUpService.staleContracts.shelfLife",
+      "type": "java.lang.String",
+      "description": "Shelf life of each contract after it is signed by seller and before it gets signed by buyer."
+    },
+    {
+      "name": "cleanUpService.staleContracts.rate",
+      "type": "java.lang.String",
+      "description": "The rate at witch the clean-up task should run."
+    },
+    {
+      "name": "cleanUpService.staleContracts.lockAtLeastFor",
+      "type": "java.lang.String",
+      "description": "ShedLock parameter to lock task execution for nodes in the cluster at least for the given time, in milliseconds. This is to make up for time difference of the servers in the cluster."
+    },
+    {
+      "name": "cleanUpService.staleContracts.lockAtMostFor",
+      "type": "java.lang.String",
+      "description": "ShedLock parameter to lock task execution for nodes in the cluster at most for the given time, in milliseconds. This is a safety net to unlock the scheduler in case of node failure."
+    },
+    {
+      "name": "kafka.bootstrapAddress",
+      "type": "java.lang.String",
+      "description": "The address of the Kafka server."
+    },
+    {
+      "name": "kafka.groups.contracts.id",
+      "type": "java.lang.String",
+      "description": "Kafka Group ID for contracts group."
+    },
+    {
+      "name": "kafka.topics.contracts.name",
+      "type": "java.lang.String",
+      "description": "Contracts kafka topic name."
+    },
+    {
+      "name": "kafka.topics.contracts.numPartitions",
+      "type": "java.lang.String",
+      "description": "Number of kafka partitions for contract."
+    },
+    {
+      "name": "kafka.topics.contracts.replicationFactor",
+      "type": "java.lang.String",
+      "description": "Kafka replication factor for contract messages."
+    },
+    {
+      "name": "kafka.enabled",
+      "type": "java.lang.String",
+      "description": "Enables Kafka for VSQ application."
+    }
+  ] }

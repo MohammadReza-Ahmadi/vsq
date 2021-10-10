@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="169" height="169" viewBox="0 0 169 169">
+  <defs>
+    <clipPath id="clip-check_success">
+      <rect width="169" height="169"/>
+    </clipPath>
+  </defs>
+  <g id="check_success" data-name="check success" clip-path="url(#clip-check_success)">
+    <g id="Group_14193" data-name="Group 14193" transform="translate(-22 15)">
+      <g id="Caller-Person" transform="translate(22 -14.948)">
+        <g id="Group-3" transform="translate(0 0)" opacity="0.1">
+          <path id="Fill-1" d="M84.206,0A84.206,84.206,0,1,1,0,84.206,84.206,84.206,0,0,1,84.206,0" fill="#00d184"/>
+        </g>
+        <g id="Group-6" transform="translate(15.193 15.193)" opacity="0.3">
+          <path id="Fill-4" d="M69.393,0A69.393,69.393,0,1,1,0,69.393,69.393,69.393,0,0,1,69.393,0" transform="translate(0 0)" fill="#00d184"/>
+        </g>
+        <g id="Group-9" transform="translate(27.385 27.385)">
+          <path id="Fill-7" d="M57.2,0A57.2,57.2,0,1,1,0,57.2,57.2,57.2,0,0,1,57.2,0" transform="translate(0 0)" fill="#00d184"/>
+        </g>
+      </g>
+      <path id="ic_done_24px" d="M19.556,36.182,7.439,24.064,3.4,28.1,19.556,44.26,54.177,9.639,50.138,5.6Z" transform="translate(80.223 42.103)" fill="#fff"/>
+    </g>
+  </g>
+</svg>
